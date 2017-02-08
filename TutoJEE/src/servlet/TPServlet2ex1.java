@@ -1,6 +1,8 @@
 package servlet;
 
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Enumeration;
 
@@ -54,16 +56,21 @@ public class TPServlet2ex1 extends HttpServlet {
 		reponse = reponse.concat("ID:");
 		reponse = reponse.concat(String.valueOf(request.getSession().getId()));
 
-		// Affichage de la date de création
+		// Affichage de la date de création au format dd/MM/yyyy HH:mm:ss
 		reponse = reponse.concat("\ndate de création:");
 		Date dateCreation = new Date(request.getSession().getCreationTime());
-		reponse = reponse.concat(String.valueOf(dateCreation));
+		DateFormat sdfdateCreation=new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+		String strDateCreation = sdfdateCreation.format(dateCreation);
+		reponse = reponse.concat(String.valueOf(strDateCreation));
 
 		// Affichage à l'écran du dernier accès
+		//Changer format de date java.util en SimpleDateFormat
 		if (newSession == false) {
 			reponse = reponse.concat("\nDernier accès:");
-			Date dateLastAccess = new Date(request.getSession().getLastAccessedTime());
-			reponse = reponse.concat(String.valueOf(dateLastAccess));
+			Date dateDernierAcces = new Date(request.getSession().getLastAccessedTime());
+			DateFormat sdfdateDernierAcces=new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+			String strdateDernierAcces = sdfdateDernierAcces.format(dateDernierAcces);
+			reponse = reponse.concat(String.valueOf(strdateDernierAcces));
 		}
 
 		// Incrémentation du nombre de visite

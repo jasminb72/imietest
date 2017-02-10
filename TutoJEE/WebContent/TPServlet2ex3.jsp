@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="/TutoJEE/TPServlet2ex3" method="get">
+<form action="/TutoJEE/TPServlet2ex3" method="post">
 	<input type="checkbox" id="testForward" value="Test forward" name="testForward1">
 	<label for="testForward"> Test Forward </label>
 	<input type="checkbox" id="testInclude" value="Test Include>" name="testInclude2">

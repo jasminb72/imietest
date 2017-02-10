@@ -1,4 +1,4 @@
-<%@page import="DTO.Personne"%>
+<%@page import="dto.Personne"%>
 <%@page import="services.HelloWorld"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
@@ -11,8 +11,8 @@
 </head>
 <body>
 
-	<!--  //pas besoin d'accéder en usebean avec le langage EL
-	//<jsp:useBean id="personne1" class="DTO.Personne" scope="request" /> -->
+	<%-- --  //pas besoin d'accéder en usebean avec le langage EL
+	//<jsp:useBean id="personne1" class="DTO.Personne" scope="request" /> -->--%>
 
 	<br />Voici le nom avec du EL : ${personne1.nom}
 	<br />Voici le nom avec du EL et la taglib Core:

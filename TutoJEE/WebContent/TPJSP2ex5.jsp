@@ -1,4 +1,4 @@
-<%@page import="DTO.Personne"%>
+<%@page import="dto.Personne"%>
 <%@page import="services.HelloWorld"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
@@ -18,7 +18,7 @@
 		<input type="text" id="idEmail" name="email" /> 
 		<input type="submit" value="Valider" />
 	</form>
-	<jsp:useBean id="personne1" class="DTO.Personne" scope="request" />
+	<jsp:useBean id="personne1" class="dto.Personne" scope="request" />
 
 	<c:if test="${empty param.email}">
 		<p>Saisie d'un nouveau compte</p>

@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.IDao;
-import dao.UtilisateurDao;
+import dto.UtilisateurDao;
 import dto.UtilisateurDto;
 
 /**
@@ -32,9 +32,19 @@ public class TPJSP2ex6ListerTousUtilisateurs extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		
+		//Instanciation de DAO qui accèdera la couche "DAO (C'est à dire Les Datas de la base de données)"
 		IDao<UtilisateurDto> utilisateurDao=new UtilisateurDao();
 		
+		//Si le nom est renseigné: création d'un utilisateur DTO
+		if (request.getParameter("nom")!=null){
+			UtilisateurDto utilisateurDto = new UtilisateurDto();
+			utilisateurDto.setNom(request.getParameter("nom"));
+			utilisateurDto.setEmail(request.getParameter("email"));
+			utilisateurDao.insert(utilisateurDto);
+		}
+		
+		//Récupération de la liste des utilisateurs
 		List<UtilisateurDto> utilisateurs= utilisateurDao.findAll();
 		request.setAttribute("utilisateurs", utilisateurs);
 		

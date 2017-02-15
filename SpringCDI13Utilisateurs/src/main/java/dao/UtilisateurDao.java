@@ -61,7 +61,7 @@ public class UtilisateurDao implements IDao<UtilisateurDto> {
 
 	@Override
 	public void insert(UtilisateurDto data) {
-		String strReq = "INSERT INTO 'utilisateur' ('nom', 'email') VALUES ('?', '?')";
+		String strReq = "INSERT INTO utilisateur (nom, email) VALUES (?, ?)";
 		try (Connection connection = getConnection();
 				PreparedStatement statement = connection.prepareStatement(strReq);) {
 			Integer index = 1;

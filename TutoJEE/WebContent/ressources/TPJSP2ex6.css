@@ -1,0 +1,63 @@
+body{
+    background-color: #dbd8d8;
+}
+
+
+main .titreListe{
+    margin-top:10px;
+    border: solid 3px #332f2f;
+    background-color: #b6b3b3;
+    color:#332f2f;
+    text-align: center;
+    font-weight: bold;
+}
+
+.tableau table {
+ border: #332f2f 1px solid;
+ width:100%;
+ border-spacing:0px;
+ padding:0px;
+ margin:10px 0px 0px 0px;
+ }
+td { 
+ border: #332f2f 1px solid;
+ color:#332f2f;
+ width:33%;
+ padding:0px;
+ margin:0px;
+ }
+ th{
+ padding:0px;
+ margin:0px; background-color: gray;
+ }
+
+thead td{
+    font-weight:bold;
+    background-color: #c7c7c7;
+}
+
+
+header{
+    display:flex;
+}
+
+
+h1{    
+    width:100%;
+    background-color: grey;
+    margin:0px;
+    padding:0px;
+    text-align: center;
+    color:#332f2f;
+    border: #332f2f 3px solid;
+    font-weight: bold;
+}
+
+h2{    
+    margin-bottom: 0px;
+    color:#332f2f;
+}
+
+label{
+    color:#332f2f;
+}

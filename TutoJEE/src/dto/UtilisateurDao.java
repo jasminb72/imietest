@@ -1,4 +1,4 @@
-package dao;
+package dto;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -10,7 +10,7 @@ import java.util.List;
 
 import com.mysql.jdbc.Driver;
 
-import dto.UtilisateurDto;
+import dao.IDao;
 
 public class UtilisateurDao implements IDao<UtilisateurDto> {
 
@@ -61,12 +61,11 @@ public class UtilisateurDao implements IDao<UtilisateurDto> {
 
 	@Override
 	public void insert(UtilisateurDto data) {
-		String strReq = "INSERT INTO 'utilisateur' ('nom', 'email') VALUES ('?', '?')";
+		String strReq = "INSERT INTO utilisateur (nom, email) VALUES (?, ?)";
 		try (Connection connection = getConnection();
 				PreparedStatement statement = connection.prepareStatement(strReq);) {
-			Integer index = 1;
-			statement.setString(index++, data.getNom());
-			statement.setString(index++, data.getEmail());
+			statement.setString(1, data.getNom());
+			statement.setString(2, data.getEmail());
 			statement.executeUpdate();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

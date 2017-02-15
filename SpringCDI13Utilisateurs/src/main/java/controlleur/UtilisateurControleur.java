@@ -21,7 +21,7 @@ public class UtilisateurControleur {
 	
     
 	@RequestMapping(value = "/TPJSP2ex6ListerTousUtilisateurs", method = RequestMethod.GET)
-	public ModelAndView listerTousUtilisateurs(ModelMap model) {
+	public String listerTousUtilisateurs(ModelMap model) {
 		// model.addAttribute("list", dao.findAll);
 		// Instanciation de DAO qui accèdera la couche "DAO (C'est à dire Les
 		// Datas de la base de données)"
@@ -31,12 +31,12 @@ public class UtilisateurControleur {
 		List<UtilisateurDto> utilisateurs = utilisateurDao.findAll();
 		model.addAttribute("utilisateurs", utilisateurs);
 
-		//return "/TPJSP2ex6ListerTousUtilisateurs";
-		return new ModelAndView("/TPJSP2ex6ListerTousUtilisateurs", "utilisateur", new UtilisateurDto());
+		return "/TPJSP2ex6ListerTousUtilisateurs";
+		//return new ModelAndView("/TPJSP2ex6ListerTousUtilisateurs", "utilisateur", new UtilisateurDto());
 	}
 
 	@RequestMapping(value = "/AjouterUtilisateur", method = RequestMethod.POST)
-	public ModelAndView AjouterUtilisateur(@Valid @ModelAttribute("utilisateur") UtilisateurDto utilisateurDto,
+	public String AjouterUtilisateur(UtilisateurDto utilisateurDto,
 			ModelMap model){
 
 		// Instanciation de DAO qui accèdera la couche "DAO (C'est à dire Les

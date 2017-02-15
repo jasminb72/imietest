@@ -20,14 +20,12 @@
 		<div class="zoneAjoutUtilisateur">
 		<h2>Ajouter nouvel utilisateur</h2>
 		<div>
-			<form:form action="/SpringCDI13Utilisateurs/AjouterUtilisateur" method="post" modelAttribute="utilisateur">
-					<form:label path="nom">Nom</form:label>
-                    <form:input path="nom"/>
-					<form:label path="email">Email</form:label>
-                    <form:input path="email"/>
-					<input type="submit"
+			<form action="/SpringCDI13Utilisateurs/AjouterUtilisateur" method="post">
+			<label for="idNom">Nom utilisateur</label> <input type="text"
+					id="idNom" name="nom" /> <label for="idEmail">Email</label> <input
+					type="text" id="idEmail" name="email" /> <input type="submit"
 					value="Valider" />
-			</form:form>
+			</form>
 		</div>
 
 	</div>
